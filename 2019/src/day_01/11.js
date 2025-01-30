@@ -1,4 +1,4 @@
-import { fetchInput } from "../../dependencies/inputLib.js";
+import { fetchInput } from "../../../dependencies/inputLib.js";
 
 export const add = (a, b) => a + b;
 

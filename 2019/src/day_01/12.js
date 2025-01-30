@@ -1,4 +1,4 @@
-import { fetchInput } from "../../dependencies/inputLib.js";
+import { fetchInput } from "../../../dependencies/inputLib.js";
 import { add } from "./11.js";
 import { requiredFuel } from "./11.js";
 
