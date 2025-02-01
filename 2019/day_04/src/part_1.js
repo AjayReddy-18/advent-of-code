@@ -5,15 +5,17 @@ const validPassword = (candidateInNum) => {
   const candidate = candidateInNum.toString();
   if (candidate.length !== 6) return false;
 
-  const differnces = [];
-  const digits = candidate.split('');
-  for (let i = 1; i < 6; i++) {
-    differnces.push(digits[i] - digits[i - 1]);
-  }
-
+  const digits = candidate.split("").map((digit) => +digit);
+  
   return (
-    !differnces.find((differnce) => differnce < 0) &&
-    differnces.indexOf(0) !== -1
+    !digits.find((digit, i) => digit > digits[i + 1]) &&
+    digits.find((digit, i) => {
+      return (
+        digits[i - 1] !== digit &&
+        digits[i + 1] === digit &&
+        digits[i + 2] !== digit
+      );
+    }) !== undefined
   );
 };
 
