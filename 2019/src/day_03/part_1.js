@@ -68,4 +68,14 @@ for (const line1 of lines1) {
   }
 }
 
-console.log(intersections);
+const distance = ({ x, y }) => Math.sqrt(x * x + y * y);
+
+const closestIntersection = (intersections) => {
+  const distances = {};
+  for (const intersection of intersections) {
+    distances[distance(intersection)] = intersection;
+  }
+  return distances[Math.min(...Object.keys(distances))];
+};
+
+console.log(closestIntersection(intersections));
