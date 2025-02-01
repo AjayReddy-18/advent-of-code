@@ -10,6 +10,6 @@ export const fuelForAllModules = (masses) => {
 
 const main = (input) => fuelForAllModules(input);
 
-const output = main(fetchInput("input/11.txt"));
+const output = main(fetchInput("../../input/day_01/part_1.txt"));
 
-// console.log(output);
+console.log(output);

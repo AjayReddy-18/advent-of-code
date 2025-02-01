@@ -2,7 +2,7 @@ export const readFile = (filePath) => {
   return Deno.readTextFileSync(filePath);
 };
 
-export const fetchInput = (filePath) => {
+export const fetchInput = (filePath, delim = "\n") => {
   const data = readFile(filePath);
-  return data.split("\n");
+  return data.split(delim);
 };
